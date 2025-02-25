@@ -39,7 +39,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ env.IMAGE_NAME }}:latest,${{ env.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ env.IMAGE_NAME | toLowerCase }}:latest,${{ env.IMAGE_NAME | toLowerCase }}:${{ github.sha }}
 
       - name: Inspect image
         run: |
