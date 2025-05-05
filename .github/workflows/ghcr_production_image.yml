@@ -1,4 +1,4 @@
-name: Publish Docker Image to GHCR
+name: GHCR Production Image CI
 
 on:
   push:
@@ -42,7 +42,7 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ env.IMAGE_NAME_LOWER }}:latest,${{ env.IMAGE_NAME_LOWER }}:${{ github.sha }}
+          tags: ${{ env.IMAGE_NAME_LOWER }}:4.1.0,${{ env.IMAGE_NAME_LOWER }}:${{ github.sha }}
 
       - name: Inspect image
         run: |
